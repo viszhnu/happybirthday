@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample api data</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+
+<body>
+     
+<script>
+
+
+var divv=document.createElement("div");
+divv.setAttribute("class", "container");
+
+var roww=document.createElement("div");
+roww.setAttribute("class", "row");
+
+var col=document.createElement("div");
+ col.setAttribute("class", "col-md-6 offset-md-3 p-3 mb-2 bg-green text-center");
+
+var heading=document.createElement("h1");
+heading.innerHTML="Message";
+heading.setAttribute("class", "display-4 mb-4 mt-5");
+heading.setAttribute("class","p-3 mb-2 bg-info text-white");
+
+col.append(heading)
+roww.append(col)
+divv.append(roww)
+document.body.append(divv);
+
+var row=document.createElement("div");
+ row.setAttribute("class", "col-md-6 offset-md-3 p-3 mb-2 bg-success text-center");
+ col.append(row); 
+var create=function(count, time, col){
+    setTimeout(() => {
+    col.innerHTML=count;
+}, time);
+};
+var happy=function(row){
+    setTimeout(() => {
+row.innerHTML="Happy Birthday!!!";
+}, 11000);
+};
+
+((count, time, a, row)=> {
+   a(count, time,/*b*/ (count, time, c, row)=>{
+      c(count, time,/*d*/ (count, time, e, row)=>{ 
+        e(count, time,/*f*/ (count, time, f, row)=>{
+            f(count, time, /*g*/(count, time, g, row)=>{
+                g(count,time, /*h*/(count, time, i, row)=>{
+                  i(count, time, /*j*/(row)=>{
+                      happy(row);
+                  }, row);
+                }, row);
+                create(9, 2000, row);
+            }, row);
+            create(7, 4000, row);
+        }, row);
+          create(5, 6000, row);
+      }, row);
+      create(3, 8000, row);
+  }, row);
+  time=time+4000;
+  count=count+2;
+  create(1, 10000, row);
+  happy(row);
+})(1, 2000,/*a*/ (count, time, b, row)=>{
+    b(count, time,/*c*/ (count, time, d, row)=>{
+        d(count, time, /*f*/(count, time, f, row)=>{
+            f(count, time, /*h*/(count, time, h, row)=>{
+                h(count, time, /*i*/(count, time,j, row)=>{
+                    create(10, 1000, row);
+                }, row);
+                create(8, 3000, row);
+            }, row);
+            create(6, 5000, row);
+        }, row);
+        create(4, 7000, row);
+    }, row);
+    count=count+1;
+    time=time+2000;
+    create(2, 9000, row);
+
+}, row);
+
+     
+</script>
+
+</body>
